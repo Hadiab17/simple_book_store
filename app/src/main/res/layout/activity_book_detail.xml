@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:layoutDirection="rtl"
+    tools:context=".BookDetailActivity">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?actionBarSize"
+                    android:background="@color/colorOnPrimary"
+                    android:layoutDirection="rtl"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:id="@+id/forward_back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        app:srcCompat="@drawable/ic_baseline_arrow_forward_24" />
+
+                    <TextView
+                        android:id="@+id/detail_book_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="نام کتاب"
+                        android:textColor="@color/colorPrimaryVariant"
+                        android:textSize="16sp" />
+
+                </RelativeLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/detail_bg_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:layout_below="@+id/toolbar"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="64dp"
+                    android:layout_marginEnd="4dp"
+                    android:elevation="-1dp"
+                    app:cardCornerRadius="16sp">
+
+                    <RelativeLayout
+                        android:id="@+id/section"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="144dp"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:id="@+id/book_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="نام کتاب"
+                            android:textColor="@color/colorPrimaryVariant"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/book_author"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/book_name"
+                            android:layout_marginTop="8dp"
+                            android:text="نام نویسنده"
+                            android:textColor="@color/colorPrimaryVariant"
+                            android:textSize="14sp" />
+
+                        <LinearLayout
+                            android:id="@+id/book_price_layout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/book_author"
+                            android:layout_marginTop="8dp">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="قیمت :"
+                                android:textColor="@color/colorPrimaryVariant"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/book_price"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=" 24000"
+                                android:textColor="#E91E1E"
+                                android:textSize="12sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/discount_price_layout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/book_price_layout"
+                            android:layout_marginTop="8dp">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="قیمت با تخفیف :"
+                                android:textColor="@color/colorPrimaryVariant"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/book_discount_price"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=" 24000"
+                                android:textColor="#4CAF50"
+                                android:textSize="12sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/rate_layout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/discount_price_layout"
+                            android:layout_alignParentEnd="true">
+
+                            <TextView
+                                android:id="@+id/book_rate_number"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginEnd="4dp"
+                                android:gravity="center"
+                                android:text="4.5/5" />
+
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_baseline_star_rate_24" />
+
+
+                        </LinearLayout>
+
+                        <Button
+                            android:id="@+id/listen_demo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/discount_price_layout"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/bg_singin_btn"
+                            android:text="شنیدن دمو"
+                            android:textColor="@color/colorPrimary"
+                            android:visibility="gone"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:src="@drawable/ic_baseline_bookmark_border_24" />
+
+
+                    </RelativeLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="120dp"
+                    android:layout_height="170dp"
+                    android:layout_below="@+id/toolbar"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="20dp"
+                    app:cardCornerRadius="16dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/detail_book_image"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/detail_bg_layout"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="24dp"
+                    android:text="مشخصات کتاب :"
+                    android:textColor="@color/colorPrimaryVariant"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:id="@+id/explanation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="6dp"
+                    android:background="@drawable/bg_detail_layout"
+                    android:orientation="horizontal"
+                    android:padding="8dp"
+                    android:weightSum="5">
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="زبان"
+                            android:textColor="@color/colorPrimaryVariant" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="انگلیسی"
+                            android:textColor="@color/colorPrimaryVariant" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="صفحات"
+                            android:textColor="@color/colorPrimaryVariant" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="200"
+                            android:textColor="@color/colorPrimaryVariant" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="جلد"
+                            android:textColor="@color/colorPrimaryVariant" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="سخت"
+                            android:textColor="@color/colorPrimaryVariant" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="امتیاز"
+                            android:textColor="@color/colorPrimaryVariant" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="4.5"
+                            android:textColor="@color/colorPrimaryVariant" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="قیمت"
+                            android:textColor="@color/colorPrimaryVariant" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="24000"
+                            android:textColor="@color/colorPrimaryVariant" />
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txt2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/explanation"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="24dp"
+                    android:text="خلاصه :"
+                    android:textColor="@color/colorPrimaryVariant"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt2"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_marginBottom="70dp"
+                    android:background="@drawable/bg_detail_layout"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/explanation"
+                        android:text="@string/sample"
+                        android:textColor="@color/colorPrimaryVariant"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/buy_btn"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/bg_buy_btn"
+        android:text="اضافه کردن به سبد خرید"
+        android:textColor="@color/colorOnPrimary" />
+
+
+</RelativeLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="rtl">
+
+    <ImageView
+        android:id="@+id/header_image"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/person" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="هادی"
+        android:textSize="18sp"
+        android:id="@+id/user_name"
+        android:textColor="@color/black"
+        android:layout_below="@+id/header_image"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="haadiabb@gmail.com"
+        android:textSize="14sp"
+        android:id="@+id/user_email"
+        android:textColor="@color/black"
+        android:layout_below="@+id/user_name"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="20dp"/>
+
+
+</RelativeLayout>
